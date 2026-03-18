@@ -1,1 +1,229 @@
+programa {
+  funcao inicio() {
+    inteiro opcao 
+     faca {
+       escreva("MENU DE ATIVIDADES\n")
+			 escreva("1. Par ou Impar\n")
+			 escreva("2. Maior de dois\n")
+			 escreva("3. Calculadora\n")
+			 escreva("4. Validacao nota\n")
+			 escreva("5. Sentinela 0\n")
+			 escreva("6. Caixa saldo\n")
+			 escreva("7. Desconto\n")
+			 escreva("8. Contagem valores\n")
+			 escreva("9. Soma 1 ate N\n")
+			 escreva("10. Regressiva\n")
+			 escreva("0. SAIR\n")
+			 escreva("Opcao: ")
+			 leia(opcao) 
+ 
+        //Atividade 1
+      se (opcao == 1) {
+        inteiro num 
+        escreva("1- Par ou ímpar\n")
+        escreva("Digite o número: ")
+        leia(num)
+        se (num % 2 == 0) {
+          escreva("Par\n")
+        }
+        senao {
+          escreva("ímpar\n")
+        }
+      }
+
+       //Atividade 2 
+      se (opcao == 2) {
+         inteiro a, b
+         escreva("2- Maior de Dois\n")
+         escreva("Digite o primeiro número: ")
+          leia(a)
+         escreva("Digite o segundo número: ")
+          leia(b)
+         se (a > b) {
+          escreva(a, " é o maior\n")
+         }
+         senao se (b > a) {
+          escreva(b, " é o maior\n")
+         }
+         senao {
+          escreva("Os números são iguais!\n")
+         }
+      }
+       
+       //Atividade 3
+      se(opcao == 3) {
+         real numero1, numero2, resultado
+         inteiro calcular 
+          escreva("3- Calculadora\n") 
+          escreva("Digite um número: \n")
+          leia(numero1)
+          escreva("Digite outro número: \n")
+          leia(numero2)
+          escreva("1- Somar\n")
+          escreva("2- Subtrair\n")
+          escreva("3- Multiplicar\n")
+          escreva("4- Dividir\n")
+          leia(calcular)
+        se (calcular == 1) {
+          resultado = numero1 + numero2
+            escreva("O resultado é: ", resultado, "\n")
+        }
+        senao se (calcular == 2) {
+          resultado = numero1 - numero2
+            escreva("O resultado é: ", resultado, "\n")
+        }
+        senao se (calcular == 3) {
+          resultado = numero1 * numero2
+            escreva("O resultado é: ", resultado, "\n")
+        }
+        senao se (calcular == 4 e numero2 != 0) {
+          resultado = numero1 / numero2
+            escreva("O resultado é: ", resultado, "\n")
+        } 
+        senao {
+          escreva("Error! \n")
+        }
+      }
+        //Atividade 4
+      se(opcao == 4) {
+        real nota 
+        escreva("4- Nota de 0-100\n")
+        leia(nota)
+        enquanto(nao(nota >= 0 e nota <= 100)) {
+          escreva("Nota inválida! 0-100: ")
+          leia(nota)
+        }
+        escreva("OK: ", nota, "\n")
+      }
+
+        //Atividade 5
+      se(opcao == 5) {
+        real numb, maior1 = -99999, menor2 = 99999
+        escreva("5. NUMEROS (0 PARA)\n")
+        leia(numb)
+        enquanto (numb != 0) {
+          se(numb > maior1) {
+            maior1 = numb
+          } 
+          senao se(numb < menor2) {
+            menor2 = numb
+          }
+          leia(numb)
+        }
+        escreva("Maior: ", maior1, "\n")
+				escreva("Menor: ", menor2, "\n")
+      }
+
+        //Atividade 6 
+      se(opcao == 6) {
+         real saldo = 1000, valor1
+         inteiro caixa
+         escreva("6- Caixa R$1000\n")
+          faca {
+            escreva("1-Deposito\n")
+            escreva("2-Sacar\n")
+            escreva("3-Saldo\n")
+            escreva("4-Saída\n") 
+            leia(caixa)
+             se (caixa == 1) {
+               escreva("Valor do Deposito: ")
+               leia(valor1)
+                se(valor1 > 0) {
+                  saldo = saldo + valor1
+                  escreva("Seu saldo agora é de R$",saldo, "\n")
+                }
+             }
+             senao se(caixa == 2) {
+              escreva("Qual valor deseja sacar: ")
+              leia(valor1)
+               se(valor1 > 0 e valor1 <= saldo) {
+                 saldo = saldo - valor1
+                 escreva("Seu saldo agora é de R$", saldo, "\n")
+               }
+             }
+             senao se(caixa == 3) {
+                 escreva("Saldo R$", saldo, "\n")
+             }
+          }
+          enquanto (caixa != 4) 
+              escreva("Final: R$", saldo, "\n")
+      }
+
+       //Atividade 7
+      se(opcao == 7) {
+        real valorSemdesconto, desconto1, valorFinal
+        inteiro categoria1
+        escreva("7. DESCONTO\n")
+				escreva("Valor: ")
+        leia(valorSemdesconto)
+         escreva("Digite o número de uma das categorias abaixo!\n")
+         escreva("Categoria 1:\n")
+         escreva("Categoria 2:\n")
+         escreva("Categoria 3:\n")
+         leia(categoria1)
+             se(categoria1 == 1) {
+                desconto1 = valorSemdesconto * 0.05
+             }
+             senao se(categoria1 == 2) {
+                desconto1 = valorSemdesconto * 0.10
+             }
+             senao se(categoria1 == 3) {
+                desconto1 = valorSemdesconto * 0.15
+             }
+             senao {
+                escreva("Categoria inválida\n")
+             }
+             valorFinal = valorSemdesconto - desconto1
+             escreva("Desconto: R$", desconto1, "\n")
+             escreva("Valor Final: R$", valorFinal, "\n")
+      }
+      
+
+       //Atividade 8
+      se(opcao == 8) {
+        inteiro i, num, p=0, n=0, z=0
+        escreva("8- 10 Números\n")
+        para(i = 1; i <= 10; i++) {
+          escreva(i, ": ")
+          leia(num)
+          se(num > 0) {
+            p++
+          }
+          senao se(num < 0) {
+            n++
+          }
+          senao {
+            z++
+          }
+          escreva("Positivo: ", p, "Negativo: ", n, "Zero: ", z, "\n")
+        }
+      }
+
+       //Atividade 9
+      se(opcao == 9) {
+        inteiro n, i, s=0
+				escreva("9. SOMA 1-N\n")
+				escreva("Digite um número: ")
+				leia(n)
+				para(i=1; i<= n; i++)
+					s = s + i
+				escreva("Soma: ", s, "\n")
+      }
+
+       //Atividade 10
+      se(opcao == 10) {
+        inteiro n, y, a=0
+				escreva("10- REGRESSIVA\n")
+				escreva("Digite um único número: ")
+				leia(n)
+				para(y=n; y>=1; y--)
+				{
+					escreva(y, " ")
+					a = a + y
+				}
+				escreva("\nSoma: ", a, "\n")
+			}
+    }enquanto (opcao != 0)
+  }
+}
 
