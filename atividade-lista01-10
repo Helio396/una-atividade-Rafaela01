@@ -195,7 +195,9 @@ programa {
           senao {
             z++
           }
-          escreva("Positivo: ", p, "Negativo: ", n, "Zero: ", z, "\n")
+          escreva("Positivos: ", p, "\n")
+				  escreva("Negativos: ", n, "\n")
+				  escreva("Zeros: ", z, "\n")
         }
       }
 
@@ -226,4 +228,3 @@ programa {
     }enquanto (opcao != 0)
   }
 }
-
