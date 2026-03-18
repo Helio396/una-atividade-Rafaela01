@@ -196,8 +196,8 @@ programa {
             z++
           }
           escreva("Positivos: ", p, "\n")
-				  escreva("Negativos: ", n, "\n")
-				  escreva("Zeros: ", z, "\n")
+		  escreva("Negativos: ", n, "\n")
+		  escreva("Zeros: ", z, "\n")
         }
       }
 
